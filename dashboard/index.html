@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token launch radar</title>
+<link rel="stylesheet" href="./app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark">◎</div>
+    <div>
+      <h1>TOKEN RADAR</h1>
+      <p id="subline">Pre-token launch radar</p>
+    </div>
+  </div>
+  <div class="integrity" id="integrity">recomputing the board…</div>
+</header>
+
+<section class="stats" id="stats"></section>
+<section class="accounting" id="accounting"></section>
+
+<main id="boardView">
+  <div class="grid">
+    <section class="pane boardPane">
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search name or slug…">
+        <select id="catSel"><option value="">All categories</option></select>
+        <select id="chainSel"><option value="">All chains</option></select>
+        <div class="tabs" id="tierTabs">
+          <button data-tier="all" class="on">All</button>
+          <button data-tier="watchlist">Watchlist</button>
+          <button data-tier="early">Early</button>
+          <button data-tier="farm">FARM verdicts</button>
+        </div>
+        <label class="planSel">Plan size
+          <select id="scenarioSel"></select>
+        </label>
+        <button id="csvBtn" class="ghost">CSV</button>
+        <button id="jsonBtn" class="ghost">JSON</button>
+        <span class="count" id="rowCount"></span>
+      </div>
+      <div class="tableWrap">
+        <table id="board">
+          <thead><tr>
+            <th data-k="rank" class="sortable">#</th>
+            <th data-k="name" class="sortable">PROTOCOL</th>
+            <th data-k="tvl_usd" class="num sortable">TVL</th>
+            <th data-k="change_7d" class="num sortable">7D %</th>
+            <th data-k="age_years" class="num sortable">NO-TOKEN AGE</th>
+            <th data-k="odds" class="num sortable">LAUNCH ODDS</th>
+            <th data-k="months" class="num sortable">WHEN ≈</th>
+            <th data-k="launch_value_usd" class="num sortable">IF IT LAUNCHES</th>
+            <th data-k="implied_value_usd" class="num sortable">IMPLIED VALUE</th>
+            <th data-k="per_hour" class="num sortable">FARM $/H</th>
+            <th data-k="verdict" class="sortable">VERDICT</th>
+          </tr></thead>
+          <tbody id="boardBody"></tbody>
+        </table>
+      </div>
+    </section>
+    <aside class="pane rail" id="rail"></aside>
+  </div>
+  <section class="pane rollups" id="rollups"></section>
+  <section class="pane basket" id="basket"></section>
+  <section class="pane assumptions" id="assumptions"></section>
+</main>
+
+<section id="detailView" hidden></section>
+
+<footer class="foot" id="foot"></footer>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
